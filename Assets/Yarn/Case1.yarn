@@ -1,0 +1,45 @@
+﻿title: Case1
+---
+Patient: Hallo.
+-> Player: Goededag, hoe gaat het met u?
+Patient: Kan beter. Ik heb veel last van deze wond hier.
+-> Player: Oei, ik zie het. Dat ziet er niet best uit.
+-> Player: Niet zo aanstellen hè. Zo erg is het niet.
+<<jump Treatment>>
+===
+title: Treatment
+---
+Patient: Wat gaat er nu gebeuren?
+-> Player: Ik zal de wond eerst even moeten spoelen.
+    <<jump Rinse>>
+-> Player: Ik ga de wond desinfecteren.
+    <<jump Disinfect>>
+-> Player: Ik ga uw wond verbinden met een verband.
+    <<jump Bandaging>>
+-> Player: Ik moet even iets pakken. Moment.
+-> Player: Dat was het, u kunt gaan!
+    Patient: Erg bedankt! Tot ziens!
+===
+title: Rinse
+---
+-> Player: Dit kan een beetje pijn doen.
+Patient: ...
+-> Player: Zo, uw wond is nu schoon.
+<<jump Treatment>>
+===
+title: Disinfect
+---
+-> Player: Ik breng nu wat jodium aan. Dat kan een beetje prikken.
+Patient: ...
+-> Player: Zo, uw wond is nu gedesinfecteerd.
+<<jump Treatment>>
+===
+title: Bandaging
+---
+-> Player: Ik wikkel het verband nu om de wond.
+Patient: ...
+-> Player: Zit het niet te strak?
+    Patient: Nee, het is prima zo.
+-> Player: Zo, het verband zit erom.
+<<jump Treatment>>
+===

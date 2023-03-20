@@ -67,5 +67,9 @@ PrefabInstance:
       propertyPath: Description
       value: Gebruik jodium om de wond te desinfecteren.
       objectReference: {fileID: 0}
+    - target: {fileID: 7652939758549524410, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
+      propertyPath: TreatmentStep
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d42ff09706cf284f8b6167fc82acd78, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
