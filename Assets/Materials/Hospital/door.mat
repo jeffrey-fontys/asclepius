@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ground_albedo
+  m_Name: door
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _METALLICGLOSSMAP
@@ -42,15 +42,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 97f0be63707fe4147a9091f4c9cc0470, type: 3}
+        m_Texture: {fileID: 2800000, guid: 08053dcdace34414fb56e50dadd6fa43, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 806dd6a29a59c6343aa1af1daeb41288, type: 3}
+        m_Texture: {fileID: 2800000, guid: c165fd2158f10d743b8c7aeb7c0eadc1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: ca10419101be70245aacf9905a904de5, type: 3}
+        m_Texture: {fileID: 2800000, guid: e66e9ae53b9c16944aea8a59707049af, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
