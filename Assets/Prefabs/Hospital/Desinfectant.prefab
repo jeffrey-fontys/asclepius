@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2745681686690066239
+--- !u!1001 &2337863842175558103
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -53,19 +53,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4630917121805151338, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
       propertyPath: m_Name
-      value: Bandages
+      value: Desinfectant
       objectReference: {fileID: 0}
     - target: {fileID: 6382135602719990156, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
       propertyPath: m_text
-      value: Verband
+      value: Jodium
       objectReference: {fileID: 0}
     - target: {fileID: 7652939758549524410, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
       propertyPath: Name
-      value: Verband
+      value: Jodium
       objectReference: {fileID: 0}
     - target: {fileID: 7652939758549524410, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
       propertyPath: Description
-      value: Wordt gebruikt om wonden te verbinden.
+      value: Gebruik jodium om de wond te desinfecteren.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
