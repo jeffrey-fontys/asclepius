@@ -64,6 +64,10 @@ PrefabInstance:
       value: Verband
       objectReference: {fileID: 0}
     - target: {fileID: 7652939758549524410, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
+      propertyPath: Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cca5e0d8cb07af0448078042734923e9, type: 3}
+    - target: {fileID: 7652939758549524410, guid: 68ef69e7e4f89574cbcceb47b2c6dfbd, type: 3}
       propertyPath: Description
       value: Wordt gebruikt om wonden te verbinden.
       objectReference: {fileID: 0}

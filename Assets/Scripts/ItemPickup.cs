@@ -7,6 +7,7 @@ public class ItemPickup : MonoBehaviour
     public string Name;
     public string Description;
     public TreatmentStep TreatmentStep;
+    public Sprite Sprite;
 
     // Start is called before the first frame update
     void Start()
