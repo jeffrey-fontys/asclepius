@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wallwindow
+  m_Name: plainwall
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords:
   - _METALLICGLOSSMAP
@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: a659a7786540dbd4d91c895f75832510, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3011a2f3b7bb2a44fac68dbd197a7a06, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,15 +43,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9caa8b2c9ef6fa344b9db870721654a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: e712470d4308b9f4e954cfaa82e487f3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 70375fa3e1f0ff04dbbca3a402ef20c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: d6e5fae0b4fe01649af9dfb4cff6303c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 0100b618baf4d044490ded8b9a4cc5d9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3c8bb6011d8d57442babaf96ad395795, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda291091cfecd44e8b9405432d01cf6, type: 3}
   m_Name: BandageWound
   m_EditorClassIdentifier: 
-  Name: Verbind Wond
+  Name: Verbind wond
   Description: Verbind de wond om het te beschermen.
   Sprite: {fileID: 0}
