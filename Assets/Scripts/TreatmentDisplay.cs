@@ -15,17 +15,17 @@ public class TreatmentDisplay : MonoBehaviour
     {
         DisplaySteps = new List<GameObject>();
         PlanName.text = Plan.Name;
+        int stepCount = 1;
         foreach (TreatmentStep step in Plan.Steps)
         {
             GameObject newStep = Instantiate(NewStepPrefab, gameObject.transform, true);
-            newStep.GetComponentInChildren<TextMeshProUGUI>().text = "• " + step.Name;
+            newStep.GetComponentInChildren<TextMeshProUGUI>().text = stepCount + ". " + step.Name;
             DisplaySteps.Add(newStep);
+            stepCount++;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateDisplay()
     {
-        
     }
 }

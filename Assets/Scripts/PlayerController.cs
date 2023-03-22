@@ -5,7 +5,7 @@ using Yarn.Unity;
 
 public class PlayerController : MonoBehaviour
 {
-    public TreatmentPlan TreatmentPlan;
+    public ProgressManager ProgressManager;
     public ItemPickup HeldItem;
 
     // Start is called before the first frame update
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     public void UseHeldItem()
     {
         if (!HeldItem) return;
-        TreatmentPlan.TreatmentAction(HeldItem.TreatmentStep);
+        ProgressManager.TreatmentAction(HeldItem.TreatmentStep);
     }
 
     //public static bool HasItem(string name)
