@@ -2183,6 +2183,7 @@ MonoBehaviour:
   PlanName: {fileID: 376293745}
   NewStepPrefab: {fileID: 6184821948148962907, guid: 91842fa1d38eb6748ab7e61975a62be5, type: 3}
   Plan: {fileID: 11400000, guid: 172a72a878edcc449bf99c1bbcf79cbd, type: 2}
+  ProgressManager: {fileID: 0}
 --- !u!114 &732408524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2900,7 +2901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TreatmentPlan: {fileID: 11400000, guid: 172a72a878edcc449bf99c1bbcf79cbd, type: 2}
-  ScoreChanged:
+  StepAdded:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &1214274167
@@ -3427,7 +3428,7 @@ GameObject:
   - component: {fileID: 1660280433}
   - component: {fileID: 1660280432}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
