@@ -1,22 +1,29 @@
 ﻿title: Case1
 ---
+<<if $PatientIntro is true>>
+    <<jump Treatment>>
+<<endif>>
+<<set $PatientSatisfaction to 0>>
 Patient: Hallo.
 -> Player: Goededag, hoe gaat het met u?
 Patient: Kan beter. Ik heb veel last van deze wond hier.
 -> Player: Oei, ik zie het. Dat ziet er niet best uit.
+    <<set $PatientSatisfaction = $PatientSatisfaction + 1>>
 -> Player: Niet zo aanstellen hè. Zo erg is het niet.
+<<set $PatientIntro to true>>
 <<jump Treatment>>
 ===
 title: Treatment
 ---
 Patient: Wat gaat er nu gebeuren?
--> Player: Ik zal de wond eerst even moeten spoelen.
+-> Player: Ik zal de wond eerst even moeten spoelen. <<if !$WoundRinsed>>
     <<jump Rinse>>
--> Player: Ik ga de wond desinfecteren.
+-> Player: Ik ga de wond desinfecteren. <<if !$WoundDesinfected && $HeldItem is "Jodium">>
     <<jump Disinfect>>
--> Player: Ik ga uw wond verbinden met een verband.
+-> Player: Ik ga uw wond verbinden met een verband. <<if !$WoundBandaged && $HeldItem is "Verband">>
     <<jump Bandaging>>
 -> Player: Ik moet even iets pakken. Moment.
+    Patient: Oké.
 -> Player: Dat was het, u kunt gaan!
     Patient: Erg bedankt! Tot ziens!
 ===
@@ -25,6 +32,7 @@ title: Rinse
 -> Player: Dit kan een beetje pijn doen.
 Patient: ...
 -> Player: Zo, uw wond is nu schoon.
+<<set $WoundRinsed to true>>
 <<jump Treatment>>
 ===
 title: Disinfect
@@ -32,6 +40,7 @@ title: Disinfect
 -> Player: Ik breng nu wat jodium aan. Dat kan een beetje prikken.
 Patient: ...
 -> Player: Zo, uw wond is nu gedesinfecteerd.
+<<set $WoundDesinfected to true>>
 <<jump Treatment>>
 ===
 title: Bandaging
@@ -40,6 +49,8 @@ title: Bandaging
 Patient: ...
 -> Player: Zit het niet te strak?
     Patient: Nee, het is prima zo.
+    <<set $PatientSatisfaction = $PatientSatisfaction + 1>>
 -> Player: Zo, het verband zit erom.
+<<set $WoundBandaged to true>>
 <<jump Treatment>>
 ===

@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using Yarn.Unity;
 
 public class PlayerController : MonoBehaviour
 {
     public ProgressManager ProgressManager;
+    public VariableStorageBehaviour VariableStorage;
     public ItemPickup HeldItem { get; private set; }
     public Transform CarryingHand;
 
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
         HeldItem = item;
         HeldItem.gameObject.SetActive(false);
+        VariableStorage.SetValue("$HeldItem", item.Name);
     }
 
     [YarnCommand("use_held_item")]
