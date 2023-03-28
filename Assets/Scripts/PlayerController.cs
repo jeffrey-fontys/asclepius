@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
 
         // Instantiate copy in hand
         _handItem = Instantiate(item.gameObject, CarryingHand, false);
-        _handItem.transform.position = CarryingHand.position;
+        _handItem.transform.position = CarryingHand.position + new Vector3(0f, -0.03f, 0f);
+        _handItem.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
         HeldItem = item;
         HeldItem.gameObject.SetActive(false);
