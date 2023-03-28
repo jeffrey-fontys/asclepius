@@ -32,8 +32,11 @@ public class PlayerController : MonoBehaviour
             Destroy(_handItem);
         }
 
-        HeldItem = item;
+        // Instantiate copy in hand
         _handItem = Instantiate(item.gameObject, CarryingHand, false);
+        _handItem.transform.position = CarryingHand.position;
+
+        HeldItem = item;
         HeldItem.gameObject.SetActive(false);
     }
 
