@@ -18,7 +18,7 @@ title: Treatment
 Patient: Wat gaat er nu gebeuren?
 -> Player: Ik zal de wond eerst even moeten spoelen. <<if !$WoundRinsed>>
     <<jump Rinse>>
--> Player: Ik ga de wond desinfecteren. <<if !$WoundDesinfected && $HeldItem is "Jodium">>
+-> Player: Ik ga de wond desinfecteren. <<if !$WoundDisinfected && $HeldItem is "Jodium">>
     <<jump Disinfect>>
 -> Player: Ik ga uw wond verbinden met een verband. <<if !$WoundBandaged && $HeldItem is "Verband">>
     <<jump Bandaging>>
@@ -40,7 +40,7 @@ title: Disinfect
 -> Player: Ik breng nu wat jodium aan. Dat kan een beetje prikken.
 Patient: ...
 -> Player: Zo, uw wond is nu gedesinfecteerd.
-<<set $WoundDesinfected to true>>
+<<set $WoundDisinfected to true>>
 <<jump Treatment>>
 ===
 title: Bandaging
