@@ -17,9 +17,7 @@ public class ClipboardSteps : MonoBehaviour
         int stepCount = 1;
         foreach (TreatmentStep step in Plan.Steps)
         {
-            GameObject newStep = Instantiate(NewStepPrefab, gameObject.transform, true);
-            newStep.transform.localScale = Vector3.one;
-            newStep.transform.localPosition = Vector3.zero;
+            GameObject newStep = Instantiate(NewStepPrefab, gameObject.transform, false);
             StepDisplay stepDisplay = newStep.GetComponent<StepDisplay>();
             stepDisplay.TreatmentStep = step;
             stepDisplay.SetText(stepCount + ". " + step.Name);
