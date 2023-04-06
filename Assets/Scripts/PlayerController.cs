@@ -9,18 +9,6 @@ public class PlayerController : MonoBehaviour
     public VariableStorageBehaviour VariableStorage;
     public ItemPickup HeldItem { get; private set; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PickupItem(ItemPickup item)
     {
         if (HeldItem != null)
@@ -39,10 +27,4 @@ public class PlayerController : MonoBehaviour
         if (!HeldItem) return;
         ProgressManager.TreatmentAction(HeldItem.TreatmentStep);
     }
-
-    //public static bool HasItem(string name)
-    //{
-    //    if (HeldItem != null && HeldItem.Name == name) return true;
-    //    else return false;
-    //}
 }

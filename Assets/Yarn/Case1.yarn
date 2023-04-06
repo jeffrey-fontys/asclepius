@@ -41,6 +41,7 @@ title: Disinfect
 Patient: ...
 -> Player: Zo, uw wond is nu gedesinfecteerd.
 <<set $WoundDisinfected to true>>
+<<use_held_item "XR Origin">>
 <<jump Treatment>>
 ===
 title: Bandaging
@@ -52,5 +53,6 @@ Patient: ...
     <<set $PatientSatisfaction = $PatientSatisfaction + 1>>
 -> Player: Zo, het verband zit erom.
 <<set $WoundBandaged to true>>
+<<use_held_item "XR Origin">>
 <<jump Treatment>>
 ===

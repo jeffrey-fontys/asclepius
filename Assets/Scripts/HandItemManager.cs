@@ -47,8 +47,9 @@ public class HandItemManager : MonoBehaviour
         if (PlayerController.HeldItem == null) return;
 
         _itemCopy = Instantiate(PlayerController.HeldItem.gameObject, HandAttachmentPoint, false);
-        _itemCopy.transform.localScale = Vector3.one * ItemScale;
         _itemCopy.SetActive(true);
+        _itemCopy.transform.position = HandAttachmentPoint.position;
+        _itemCopy.transform.localScale = Vector3.one * ItemScale;
     }
 
     private void HideHandItem(InputAction.CallbackContext context)
