@@ -23,4 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c16a5a98acc97c4cad6e40edd098eeb, type: 2}
   - {fileID: 11400000, guid: 9d42ff09706cf284f8b6167fc82acd78, type: 2}
   - {fileID: 11400000, guid: fe9fecbee31086e4f92831bc7ea08382, type: 2}
+  - {fileID: 11400000, guid: f05618cf73066a148beb460034cef3eb, type: 2}
   WoundSprite: {fileID: 21300000, guid: 0c918bff7b3f2f845a65e090ca8bd6d3, type: 3}
