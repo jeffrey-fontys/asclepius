@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Desinfecteer wond
   Description: Desinfecteer de wond om infectie tegen te gaan.
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: bcb33793683813f49a277afea0548f39, type: 3}

@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Yarn.Unity;
 
 public class ProgressManager : MonoBehaviour
 {
     public TreatmentPlan TreatmentPlan;
     public List<TreatmentStepTaken> StepsTaken { get; private set; }
-    public int Score { get; private set; } = 0;
     public UnityEvent StepAdded;
+
+    public int TotalScore { get; private set; } = 0;
+    public int TreatmentScore { get; private set; } = 0;
+    public int DialogueScore { get; private set; } = 0;
+    public int DialogueTotal { get; private set; } = 0;
 
     private void Start()
     {
@@ -31,16 +36,28 @@ public class ProgressManager : MonoBehaviour
         StepAdded?.Invoke();
     }
 
+    [YarnCommand("set_dialogue_total")]
+    public void SetDialogueTotal(int amount)
+    {
+        DialogueTotal = amount;
+    }
+
+    [YarnCommand("add_dialogue_points")]
+    public void AddDialoguePoints(int amount = 1)
+    {
+        DialogueScore += amount;
+        CalculateScore();
+    }
+
     private void CalculateScore()
     {
-        float score = 0f;
-        float increment = 50f / TreatmentPlan.Steps.Count;
+        TreatmentScore = 0;
 
         foreach (TreatmentStepTaken step in StepsTaken)
         {
-            score += (step.StepValid ? increment : 0) + (step.StepInOrder ? increment : 0);
+            TreatmentScore += (step.StepValid ? 1 : 0) + (step.StepInOrder ? 1 : 0);
         }
 
-        Score = Mathf.RoundToInt(score);
+        TotalScore = (TreatmentScore + DialogueScore) / (TreatmentPlan.Steps.Count * 2 + DialogueTotal) * 100;
     }
 }

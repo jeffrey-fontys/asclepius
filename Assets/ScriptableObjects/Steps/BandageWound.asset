@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Verbind wond
   Description: Verbind de wond om het te beschermen.
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: cca5e0d8cb07af0448078042734923e9, type: 3}

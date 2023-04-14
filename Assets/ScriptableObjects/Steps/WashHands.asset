@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Handen wassen
   Description: Was je handen voordat je begint.
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 332a45e0c1909b245af6415c5f74f704, type: 3}

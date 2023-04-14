@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Was de wond
   Description: Was de wond om hem schoon te maken.
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: b00307733b61e1142800c7b6662cb812, type: 3}

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Handschoenen weggooien
   Description: Gebruikte handschoenen moeten worden weggegooid.
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 8a771e498ad381d469fb06ae86e44c3a, type: 3}
