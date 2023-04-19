@@ -3,12 +3,12 @@
 <<if $PatientIntro is true>>
     <<jump Treatment>>
 <<endif>>
-<<set $PatientSatisfaction to 0>>
+<<set_dialogue_total "XR Origin" 2>>
 Patient: Hallo.
 -> Player: Goededag, hoe gaat het met u?
 Patient: Kan beter. Ik heb veel last van deze wond hier.
 -> Player: Oei, ik zie het. Dat ziet er niet best uit.
-    <<set $PatientSatisfaction = $PatientSatisfaction + 1>>
+    <<add_dialogue_points "XR Origin" 1>>
 -> Player: Niet zo aanstellen hè. Zo erg is het niet.
 <<set $PatientIntro to true>>
 <<jump Treatment>>
@@ -51,7 +51,7 @@ title: Bandaging
 Patient: ...
 -> Player: Zit het niet te strak?
     Patient: Nee, het is prima zo.
-    <<set $PatientSatisfaction = $PatientSatisfaction + 1>>
+    <<add_dialogue_points "XR Origin" 1>>
 -> Player: Zo, het verband zit erom.
 <<set $WoundBandaged to true>>
 <<use_held_item "XR Origin">>
