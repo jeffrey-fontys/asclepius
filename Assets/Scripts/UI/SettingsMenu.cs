@@ -1,8 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
-using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -17,33 +17,20 @@ public class SettingsMenu : MonoBehaviour
 
     private void Start()
     {
-        MainVolumeSlider.value = PlayerPrefs.GetFloat("VolumeMain", 0);
-        MusicVolumeSlider.value = PlayerPrefs.GetFloat("VolumeMusic", 0);
-        SFXVolumeSlider.value = PlayerPrefs.GetFloat("VolumeSFX", 0);
+        MainVolumeSlider.value = PlayerPrefs.GetFloat("VolumeMain", 1);
+        MusicVolumeSlider.value = PlayerPrefs.GetFloat("VolumeMusic", 1);
+        SFXVolumeSlider.value = PlayerPrefs.GetFloat("VolumeSFX", 1);
         TurnProviderDropdown.value = PlayerPrefs.GetInt("TurnProvider", 0);
         TurnProviderDropdown.RefreshShownValue();
     }
 
-    public void SetVolumeMain(float volume)
-    {
-        AudioMixer.SetFloat("VolumeMain", volume);
-        PlayerPrefs.SetFloat("VolumeMain", volume);
-        PlayerPrefs.Save();
-    }
+    private void OnDestroy() { PlayerPrefs.Save(); }
 
-    public void SetVolumeMusic(float volume)
-    {
-        AudioMixer.SetFloat("VolumeMusic", volume);
-        PlayerPrefs.SetFloat("VolumeMusic", volume);
-        PlayerPrefs.Save();
-    }
+    public void SetVolumeMain(float volume) { SetVolume("VolumeMain", volume); }
 
-    public void SetVolumeSFX(float volume)
-    {
-        AudioMixer.SetFloat("VolumeSFX", volume);
-        PlayerPrefs.SetFloat("VolumeSFX", volume);
-        PlayerPrefs.Save();
-    }
+    public void SetVolumeMusic(float volume) { SetVolume("VolumeMusic", volume); }
+
+    public void SetVolumeSFX(float volume) { SetVolume("VolumeSFX", volume); }
 
     public void SetTurnProvider(int turnIndex)
     {
@@ -59,6 +46,11 @@ public class SettingsMenu : MonoBehaviour
                 break;
         }
         PlayerPrefs.SetInt("TurnProvider", turnIndex);
-        PlayerPrefs.Save();
+    }
+
+    private void SetVolume(string name, float volume)
+    {
+        AudioMixer.SetFloat(name, Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat(name, volume);
     }
 }
