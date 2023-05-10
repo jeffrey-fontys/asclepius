@@ -35,6 +35,13 @@ public class ProgressManager : MonoBehaviour
         StepAdded?.Invoke();
     }
 
+    [YarnCommand("treatment_action")]
+    public void TreatmentAction(string stepName)
+    {
+        TreatmentStep step = TreatmentPlan.Steps.Find(x => x.Name == stepName);
+        if (step != null) TreatmentAction(step);
+    }
+
     [YarnCommand("set_dialogue_total")]
     public void SetDialogueTotal(int amount)
     {
