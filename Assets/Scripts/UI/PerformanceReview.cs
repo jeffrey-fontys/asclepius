@@ -21,8 +21,9 @@ public class PerformanceReview : MonoBehaviour
     public TextMeshProUGUI TotalScoreText;
     public ProgressManager ProgressManager;
     public Image AwardImage;
-    public Color OutOfOrderColor = Color.yellow;
-    public Color InvalidColor = Color.red;
+    public Sprite StepCompletedSprite;
+    public Sprite StepOutOfOrderSprite;
+    public Sprite StepMissingSprite;
     public AwardSpriteSet[] AwardSprites;
 
     private void OnEnable()
@@ -66,14 +67,15 @@ public class PerformanceReview : MonoBehaviour
             GameObject newStep = Instantiate(StepPrefab, StepPanel.transform, false);
             newStep.GetComponentInChildren<TextMeshProUGUI>().text = step.Name;
             Image image = newStep.GetComponentInChildren<Image>();
+            Image statusBadge = image.transform.GetChild(0).GetComponent<Image>();
             image.sprite = step.Sprite;
             TreatmentStepTaken stepTaken = ProgressManager.StepsTaken.Find(x => x.TreatmentStep == step);
             if (stepTaken != null && stepTaken.StepValid)
             {
-                if (stepTaken.StepInOrder) image.color = Color.white;
-                else image.color = OutOfOrderColor;
+                if (stepTaken.StepInOrder) statusBadge.sprite = StepCompletedSprite;
+                else statusBadge.sprite = StepOutOfOrderSprite;
             }
-            else image.color = InvalidColor;
+            else statusBadge.sprite = StepMissingSprite;
         }
     }
 }

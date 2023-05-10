@@ -7174,8 +7174,9 @@ MonoBehaviour:
   TotalScoreText: {fileID: 272303791}
   ProgressManager: {fileID: 1082006423}
   AwardImage: {fileID: 591693200}
-  OutOfOrderColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  InvalidColor: {r: 1, g: 0, b: 0, a: 1}
+  StepCompletedSprite: {fileID: 21300000, guid: 00e20982654c62a4a88edd32220e68a9, type: 3}
+  StepOutOfOrderSprite: {fileID: 21300000, guid: 1cc2302f4082a084aa2437d2d3c6bd81, type: 3}
+  StepMissingSprite: {fileID: 21300000, guid: 5883b9985e531194d827a6ccabf1c2f5, type: 3}
   AwardSprites:
   - StartValue: 0
     Sprite: {fileID: 21300000, guid: d7877d43980a7f645bc68b20574a5a86, type: 3}
