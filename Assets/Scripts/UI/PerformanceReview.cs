@@ -15,7 +15,7 @@ public class PerformanceReview : MonoBehaviour
 
     public GameObject StepPrefab;
     public GameObject StepPanel;
-    public float ScoreAnimationIncrement = .05f;
+    [Min(0.1f)]public float ScoreAnimationSpeed = 1f;
     public TextMeshProUGUI DialogueScoreText;
     public TextMeshProUGUI TreatmentScoreText;
     public TextMeshProUGUI TotalScoreText;
@@ -28,25 +28,25 @@ public class PerformanceReview : MonoBehaviour
     private void OnEnable()
     {
         if (DialogueScoreText != null) StartCoroutine(SubScoreAnimation(ProgressManager.DialogueScore, ProgressManager.DialogueTotal, DialogueScoreText));
-        if (TreatmentScoreText != null) StartCoroutine(SubScoreAnimation(ProgressManager.TreatmentScore, ProgressManager.TreatmentPlan.Steps.Count, TreatmentScoreText));
+        if (TreatmentScoreText != null) StartCoroutine(SubScoreAnimation(ProgressManager.TreatmentScore, ProgressManager.TreatmentPlan.Steps.Count * 2, TreatmentScoreText));
         StartCoroutine(TotalScoreAnimation(ProgressManager.TotalScore, TotalScoreText));
     }
 
     private IEnumerator SubScoreAnimation(int finalScore, int maxScore, TextMeshProUGUI targetText)
     {
-        for (int currentDisplayedScore = 0; currentDisplayedScore < finalScore; currentDisplayedScore++)
+        for (int currentDisplayedScore = 0; currentDisplayedScore <= finalScore; currentDisplayedScore++)
         {
             targetText.text = currentDisplayedScore.ToString() + " / " + maxScore.ToString();
-            yield return new WaitForSeconds(ScoreAnimationIncrement);
+            yield return new WaitForSeconds(5f / maxScore * ScoreAnimationSpeed);
         }
     }
 
     private IEnumerator TotalScoreAnimation(int finalScore, TextMeshProUGUI targetText)
     {
-        for (int currentDisplayedScore = 0; currentDisplayedScore < finalScore; currentDisplayedScore++)
+        for (int currentDisplayedScore = 0; currentDisplayedScore <= finalScore; currentDisplayedScore++)
         {
             targetText.text = currentDisplayedScore.ToString() + "%";
-            yield return new WaitForSeconds(ScoreAnimationIncrement);
+            yield return new WaitForSeconds(0.05f * ScoreAnimationSpeed);
         }
         SetAwardSprite();
         PopulateStepPanel();

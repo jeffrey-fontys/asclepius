@@ -26,7 +26,7 @@ Patient: Wat gaat er nu gebeuren?
     Patient: Oké.
 -> Player: Dat was het, u kunt gaan!
     Patient: Erg bedankt! Tot ziens!
-    <<show_performance_review StateManager>>
+    <<show_performance_review "State Manager">>
 ===
 title: Rinse
 ---

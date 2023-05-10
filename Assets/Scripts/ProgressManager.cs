@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -58,6 +57,6 @@ public class ProgressManager : MonoBehaviour
             TreatmentScore += (step.StepValid ? 1 : 0) + (step.StepInOrder ? 1 : 0);
         }
 
-        TotalScore = (TreatmentScore + DialogueScore) / (TreatmentPlan.Steps.Count * 2 + DialogueTotal) * 100;
+        TotalScore = Mathf.CeilToInt((TreatmentScore + DialogueScore) / (TreatmentPlan.Steps.Count * 2f + DialogueTotal) * 100);
     }
 }
