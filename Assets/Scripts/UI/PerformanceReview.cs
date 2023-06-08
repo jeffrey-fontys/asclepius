@@ -58,6 +58,7 @@ public class PerformanceReview : MonoBehaviour
         int index = -1;
         foreach (AwardSpriteSet set in AwardSprites) if (ProgressManager.TotalScore >= set.StartValue) index++;
         AwardImage.sprite = AwardSprites[index].Sprite;
+        AwardImage.color = Color.white;
     }
 
     private void PopulateStepPanel()
