@@ -14,6 +14,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider MusicVolumeSlider;
     public Slider SFXVolumeSlider;
     public TMP_Dropdown TurnProviderDropdown;
+    public TextMeshProUGUI VersionText;
 
     private void Start()
     {
@@ -22,9 +23,12 @@ public class SettingsMenu : MonoBehaviour
         SFXVolumeSlider.value = PlayerPrefs.GetFloat("VolumeSFX", 1);
         TurnProviderDropdown.value = PlayerPrefs.GetInt("TurnProvider", 0);
         TurnProviderDropdown.RefreshShownValue();
+        SetVersionInCredits();
     }
 
     private void OnDestroy() { PlayerPrefs.Save(); }
+
+    private void SetVersionInCredits() { VersionText.text = VersionText.text.Replace("{V}", Application.version); }
 
     public void SetVolumeMain(float volume) { SetVolume("VolumeMain", volume); }
 

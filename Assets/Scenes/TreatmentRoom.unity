@@ -6861,7 +6861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Wondzorg Simulator 2023 v20230608A door Jeffrey Derksen
+  m_text: Wondzorg Simulator 2023 v{V} door Jeffrey Derksen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9750,6 +9750,7 @@ MonoBehaviour:
   MusicVolumeSlider: {fileID: 854021158}
   SFXVolumeSlider: {fileID: 640722864}
   TurnProviderDropdown: {fileID: 1423907640}
+  VersionText: {fileID: 1333289611}
 --- !u!1001 &1791161928
 PrefabInstance:
   m_ObjectHideFlags: 0
